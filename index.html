@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaza Pretoria - Menu Digitale</title>
+    <style>
+        /* Reset e Font di Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Header e Logo */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+        }
+
+        .logo {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Navigazione Rapida Categorie */
+        .menu-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 15px 10px;
+            position: sticky;
+            top: 0;
+            background-color: #0d0d0d;
+            z-index: 100;
+            border-bottom: 1px solid #222;
+        }
+
+        .menu-nav a {
+            color: #ccc;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #1a1a1a;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .menu-nav a:hover {
+            background-color: #8bc34a; /* Verde che richiama la 'A' del logo */
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Contenitore Menu */
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            color: #8bc34a;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #222;
+            padding-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        /* Sotto-categorie per le bevande */
+        .subsection-title {
+            color: #aaa;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Struttura Piatti e Bibite */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background-color: #141414;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .menu-item:hover {
+            border-left-color: #8bc34a;
+        }
+
+        .item-details {
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .item-allergens {
+            font-size: 0.75rem;
+            color: #ffa726;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #555;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header con il tuo Logo -->
+    <header>
+        <img src="logo.jpg" alt="Plaza Pretoria Logo" class="logo">
+    </header>
+
+    <!-- Barra di navigazione per scorrere rapidamente -->
+    <nav class="menu-nav">
+        <a href="#antipasti">Antipasti</a>
+        <a href="#primi">Primi</a>
+        <a href="#secondi-pesce">Pesce</a>
+        <a href="#secondi-carne">Carne</a>
+        <a href="#insalate">Insalate</a>
+        <a href="#hamburger">Hamburger</a>
+        <a href="#bevande">Bevande</a>
+    </nav>
+
+    <!-- Contenuto del Menu -->
+    <div class="menu-container">
+
+        <!-- ANTIPASTI -->
+        <section id="antipasti">
+            <h2 class="section-title">Antipasti</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-title">Caponata di Pesce Spada</div>
+                    <div class="item-description">Melanzane, sedano, olive, capperi, salsa agrodolce e dadini di spada fresco.</div>
+                    <div class="item-allergens">Allergeni: Pesce, Sedano</div>
+                </div>
+                <div class="item-price">€ 12,00</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-title">Tagliere Pretoria</div>
+                    <div class="item-description">Selezione di salumi e formaggi locali accompagnati da confetture.</div>
+                    <div class="item-allergens">Allergeni: Latticini</div>
+                </div>
+                <div class="item-price">€ 15,00</div>
+            </div>
+        </section>
+
+        <!-- PRIMI -->
+        <section id="primi">
+            <h2 class="section-title">Primi Piatti</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-title">Busiate con Pesto alla Trapanese e Gamberi</div>
+                    <div class="item-description">Pasta fresca, pomodoro fresco, mandorle, basilico, aglio e gamberi scottati.</div>
+                    <div class="item-allergens">Allergeni: Glutine, Crostacei, Frutta a guscio</div>
+                </div>
+                <div class="item-price">€ 14,00</div>
+            </div>
+        </section>
+
+        <!-- SECONDI DI PESCE -->
+        <section id="secondi-pesce">
+            <h2 class="section-title">Secondi di Pesce</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-title">Trancio di Tonno in Crosta di Pistacchio</div>
+                    <div class="item-description">Tonno fresco locale con granella di pistacchio e riduzione al Nero d'Avola.</div>
+                    <div class="item-allergens">Allergeni: Pesce, Frutta a guscio</div>
+                </div>
+                <div class="item-price">€ 18,00</div>
+            </div>
+        </section>
+
+        <!-- SECONDI DI CARNE -->
+        <section id="secondi-carne">
+            <h2 class="section-title">Secondi di Carne</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-title">Tagliata di Scottona</div>
+                    <div class="item-description">Con rucola, scaglie di grana e glassa di aceto balsamico.</div>
+                    <div class="item-allergens">Allergeni: Latticini</div>
+                </div>
+                <div class="item-price">€ 19,00</div>
+            </div>
+        </section>
+
+        <!-- INSALATE -->
+        <section id="insalate">
+            <h2 class="section-title">Insalate</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-title">Insalata Pretoria</div>
+                    <div class="item-description">Misticanza, pomodorini, avocado, salmone affumicato e semi di sesamo.</div>
+                    <div class="item-allergens">Allergeni: Pesce, Sesamo</div>
+                </div>
+                <div class="item-price">€ 10,50</div>
+            </div>
+        </section>
+
+        <!-- HAMBURGER -->
+        <section id="hamburger">
+            <h2 class="section-title">Hamburger</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-title">The Plaza Burger</div>
+                    <div class="item-description">Pane artigianale, scottona 200g, cheddar, bacon croccante, pomodoro e salsa barbecue. Servito con patatine.</div>
+                    <div class="item-allergens">Allergeni: Glutine, Latticini</div>
+                </div>
+                <div class="item-price">€ 13,00</div>
+            </div>
+        </section>
+
+        <!-- BEVANDE e BIRRE -->
+        <section id="bevande">
+            <h2 class="section-title">Bevande e Birre</h2>
+            
+            <h3 class="subsection-title">Bibite Analcoliche</h3>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">Coca Cola / Coca Cola Zero</div></div>
+                <div class="item-price">€ 3,00</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">The alla Pesca / al Limone</div></div>
+                <div class="item-price">€ 3,00</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">Lemon Soda</div></div>
+                <div class="item-price">€ 3,00</div>
+            </div>
+
+            <h3 class="subsection-title">Succhi di Frutta</h3>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-title">Succo di Frutta</div>
+                    <div class="item-description">Mirtillo, Pesca, Pera, ACE, Arancia.</div>
+                </div>
+                <div class="item-price">€ 3,00</div>
+            </div>
+
+            <h3 class="subsection-title">Acqua</h3>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">Acqua Naturale / Frizzante (0.5 L)</div></div>
+                <div class="item-price">€ 1,50</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">Acqua Naturale / Frizzante (1.0 L)</div></div>
+                <div class="item-price">€ 2,50</div>
+            </div>
+
+            <h3 class="subsection-title">Birre</h3>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">Birra Messina</div></div>
+                <div class="item-price">€ 3,50</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">Birra Moretti</div></div>
+                <div class="item-price">€ 3,50</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">Heineken</div></div>
+                <div class="item-price">€ 4,00</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details"><div class="item-title">Ceres</div></div>
+                <div class="item-price">€ 4,50</div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer con info del locale -->
+    <footer>
+        <p>© 2026 Plaza Pretoria. Tutti i diritti riservati.</p>
+        <p>Servizio e coperto € 2,00 | Informare il personale per eventuali allergie gravi.</p>
+    </footer>
+
+</body>
+</html>
