@@ -164,15 +164,6 @@
             letter-spacing: 1px;
         }
 
-        .subsection-title {
-            color: #aaa;
-            font-size: 1.1rem;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
         /* Struttura Piatti */
         .menu-item {
             display: flex;
@@ -221,8 +212,8 @@
             white-space: nowrap;
         }
 
-        /* Gestione visibilità lingue */
-        [lang="en"], [lang="fr"], [lang="es"] {
+        /* Nascondiamo inizialmente le lingue straniere usando una classe dedicata */
+        .lang-en, .lang-fr, .lang-es {
             display: none;
         }
 
@@ -245,10 +236,10 @@
         
         <!-- Pulsanti Cambio Lingua -->
         <div class="lang-selector">
-            <button class="lang-btn active" onclick="changeLanguage('it')">IT</button>
-            <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
-            <button class="lang-btn" onclick="changeLanguage('fr')">FR</button>
-            <button class="lang-btn" onclick="changeLanguage('es')">ES</button>
+            <button class="lang-btn active" onclick="changeLanguage('it', event)">IT</button>
+            <button class="lang-btn" onclick="changeLanguage('en', event)">EN</button>
+            <button class="lang-btn" onclick="changeLanguage('fr', event)">FR</button>
+            <button class="lang-btn" onclick="changeLanguage('es', event)">ES</button>
         </div>
 
         <button class="menu-toggle" id="mobile-menu-btn" aria-label="Menu">
@@ -258,28 +249,28 @@
         </button>
     </div>
 
-    <!-- Menu Laterale (I link cambiano testo in base alla lingua) -->
+    <!-- Menu Laterale -->
     <nav class="menu-nav" id="sidebar-menu">
         <a href="#antipasti">
-            <span lang="it">Antipasti</span><span lang="en">Starters</span><span lang="fr">Entrées</span><span lang="es">Entrantes</span>
+            <span class="lang-it">Antipasti</span><span class="lang-en">Starters</span><span class="lang-fr">Entrées</span><span class="lang-es">Entrantes</span>
         </a>
         <a href="#primi">
-            <span lang="it">Primi Piatti</span><span lang="en">First Courses</span><span lang="fr">Plats Principaux</span><span lang="es">Primeros Platos</span>
+            <span class="lang-it">Primi Piatti</span><span class="lang-en">First Courses</span><span class="lang-fr">Plats Principaux</span><span class="lang-es">Primeros Platos</span>
         </a>
         <a href="#secondi-pesce">
-            <span lang="it">Secondi Pesce</span><span lang="en">Fish Courses</span><span lang="fr">Plats de Poisson</span><span lang="es">Platos de Pescado</span>
+            <span class="lang-it">Secondi Pesce</span><span class="lang-en">Fish Courses</span><span class="lang-fr">Plats de Poisson</span><span class="lang-es">Platos de Pescado</span>
         </a>
         <a href="#secondi-carne">
-            <span lang="it">Secondi Carne</span><span lang="en">Meat Courses</span><span lang="fr">Plats de Viande</span><span lang="es">Platos de Carne</span>
+            <span class="lang-it">Secondi Carne</span><span class="lang-en">Meat Courses</span><span class="lang-fr">Plats de Viande</span><span class="lang-es">Platos de Carne</span>
         </a>
         <a href="#insalate">
-            <span lang="it">Insalate</span><span lang="en">Salads</span><span lang="fr">Salades</span><span lang="es">Ensaladas</span>
+            <span class="lang-it">Insalate</span><span class="lang-en">Salads</span><span class="lang-fr">Salades</span><span class="lang-es">Ensaladas</span>
         </a>
         <a href="#hamburger">
-            <span lang="it">Hamburger</span><span lang="en">Burgers</span><span lang="fr">Hamburgers</span><span lang="es">Hamburguesas</span>
+            <span class="lang-it">Hamburger</span><span class="lang-en">Burgers</span><span class="lang-fr">Hamburgers</span><span class="lang-es">Hamburguesas</span>
         </a>
         <a href="#bevande">
-            <span lang="it">Bevande e Birre</span><span lang="en">Drinks & Beers</span><span lang="fr">Boissons & Bières</span><span lang="es">Bebidas y Cervezas</span>
+            <span class="lang-it">Bevande e Birre</span><span class="lang-en">Drinks & Beers</span><span class="lang-fr">Boissons & Bières</span><span class="lang-es">Bebidas y Cervezas</span>
         </a>
     </nav>
 
@@ -292,31 +283,31 @@
         <!-- ANTIPASTI -->
         <section id="antipasti">
             <h2 class="section-title">
-                <span lang="it">Antipasti</span><span lang="en">Starters</span><span lang="fr">Entrées</span><span lang="es">Entrantes</span>
+                <span class="lang-it">Antipasti</span><span class="lang-en">Starters</span><span class="lang-fr">Entrées</span><span class="lang-es">Entrantes</span>
             </h2>
             
             <div class="menu-item">
                 <div class="item-details">
                     <!-- Versione Italiana -->
-                    <div lang="it">
+                    <div class="lang-it">
                         <div class="item-title">Caponata di Pesce Spada</div>
                         <div class="item-description">Melanzane, sedano, olive, capperi, salsa agrodolce e dadini di spada fresco.</div>
                         <div class="item-allergens">Allergeni: Pesce, Sedano</div>
                     </div>
                     <!-- Versione Inglese -->
-                    <div lang="en">
+                    <div class="lang-en">
                         <div class="item-title">Swordfish Caponata</div>
                         <div class="item-description">Eggplants, celery, olives, capers, sweet and sour sauce and fresh swordfish cubes.</div>
                         <div class="item-allergens">Allergens: Fish, Celery</div>
                     </div>
                     <!-- Versione Francese -->
-                    <div lang="fr">
+                    <div class="lang-fr">
                         <div class="item-title">Caponata d'Espadon</div>
                         <div class="item-description">Aubergines, céleri, olives, câpres, sauce aigre-douce et dés d'espadon frais.</div>
                         <div class="item-allergens">Allergènes: Poisson, Céleri</div>
                     </div>
                     <!-- Versione Spagnola -->
-                    <div lang="es">
+                    <div class="lang-es">
                         <div class="item-title">Caponata de Pez Espada</div>
                         <div class="item-description">Berenjenas, apio, aceitunas, alcaparras, salsa agridulce y daditos de pez espada fresco.</div>
                         <div class="item-allergens">Alérgenos: Pescado, Apio</div>
@@ -329,25 +320,25 @@
         <!-- PRIMI PIATTI -->
         <section id="primi">
             <h2 class="section-title">
-                <span lang="it">Primi Piatti</span><span lang="en">First Courses</span><span lang="fr">Plats Principaux</span><span lang="es">Primeros Platos</span>
+                <span class="lang-it">Primi Piatti</span><span class="lang-en">First Courses</span><span class="lang-fr">Plats Principaux</span><span class="lang-es">Primeros Platos</span>
             </h2>
             <div class="menu-item">
                 <div class="item-details">
-                    <div lang="it">
+                    <div class="lang-it">
                         <div class="item-title">Busiate con Pesto alla Trapanese</div>
                         <div class="item-description">Pasta fresca, pomodoro, mandorle, basilico, aglio e gamberi.</div>
                     </div>
-                    <div lang="en">
+                    <div class="lang-en">
                         <div class="item-title">Busiate with Trapanese Pesto</div>
                         <div class="item-description">Fresh pasta, tomato, almonds, basil, garlic and prawns.</div>
                     </div>
-                    <div lang="fr">
+                    <div class="lang-fr">
                         <div class="item-title">Busiate au Pesto de Trapani</div>
-                        <div class="item-description">Pâtes fraîches, tomate, amandes, basilic, ail et crevettes.</div>
+                        <div class="item-description">Pâtes fraîches, tomate, amande, basilic, ail et crevettes.</div>
                     </div>
-                    <div lang="es">
+                    <div class="lang-es">
                         <div class="item-title">Busiate con Pesto a la Trapanesa</div>
-                        <div class="item-description">Pasta fresca, tomate, almendras, albahaca, ajo y gambe.</div>
+                        <div class="item-description">Pasta fresca, tomate, almendras, albahaca, ajo y gambas.</div>
                     </div>
                 </div>
                 <div class="item-price">€ 14,00</div>
@@ -357,23 +348,23 @@
         <!-- SECONDI DI PESCE -->
         <section id="secondi-pesce">
             <h2 class="section-title">
-                <span lang="it">Secondi di Pesce</span><span lang="en">Fish Courses</span><span lang="fr">Plats de Poisson</span><span lang="es">Platos de Pescado</span>
+                <span class="lang-it">Secondi di Pesce</span><span class="lang-en">Fish Courses</span><span class="lang-fr">Plats de Poisson</span><span class="lang-es">Platos de Pescado</span>
             </h2>
             <div class="menu-item">
                 <div class="item-details">
-                    <div lang="it">
+                    <div class="lang-it">
                         <div class="item-title">Trancio di Tonno in Crosta</div>
                         <div class="item-description">Tonno fresco locale con granella di pistacchio.</div>
                     </div>
-                    <div lang="en">
+                    <div class="lang-en">
                         <div class="item-title">Tuna Steak in Crust</div>
                         <div class="item-description">Fresh local tuna with chopped pistachios.</div>
                     </div>
-                    <div lang="fr">
+                    <div class="lang-fr">
                         <div class="item-title">Pavé de Thon en Croûte</div>
-                        <div class="item-description">Thon frais local con pistaches concassées.</div>
+                        <div class="item-description">Thon frais local aux pistaches concassées.</div>
                     </div>
-                    <div lang="es">
+                    <div class="lang-es">
                         <div class="item-title">Filete de Atún en Costra</div>
                         <div class="item-description">Atún fresco local con pistachos picados.</div>
                     </div>
@@ -381,8 +372,6 @@
                 <div class="item-price">€ 18,00</div>
             </div>
         </section>
-
-        <!-- (Aggiungi qui sotto gli altri piatti seguendo la stessa struttura!) -->
 
     </div>
 
@@ -408,8 +397,8 @@
             });
         });
 
-        // Funzione per Cambiare Lingua
-        function changeLanguage(lang) {
+        // Funzione per Cambiare Lingua Corretta
+        function changeLanguage(lang, event) {
             // Rimuove la classe attiva da tutti i pulsanti delle lingue
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
@@ -418,14 +407,17 @@
             // Aggiunge la classe attiva al pulsante premuto
             event.target.classList.add('active');
 
-            // Nasconde tutti gli elementi con attributo lang
-            document.querySelectorAll('[lang]').forEach(elem => {
-                elem.style.display = 'none';
+            // Nasconde TUTTI i blocchi delle lingue usando le classi specifiche
+            const tutteLeLingue = ['.lang-it', '.lang-en', '.lang-fr', '.lang-es'];
+            tutteLeLingue.forEach(classe => {
+                document.querySelectorAll(classe).forEach(elem => {
+                    elem.style.display = 'none';
+                });
             });
 
             // Mostra solo gli elementi della lingua selezionata
-            document.querySelectorAll(`[lang="${lang}"]`).forEach(elem => {
-                // Se è uno span (dentro i titoli/pulsanti), usa 'inline', altrimenti 'block' per i blocchi di testo
+            document.querySelectorAll(`.lang-${lang}`).forEach(elem => {
+                // Se è uno span (nei bottoni o titoli), usa 'inline', altrimenti 'block' per i piatti
                 if(elem.tagName === 'SPAN') {
                     elem.style.display = 'inline';
                 } else {
