@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaza Pretoria - Menu Digitale</title>
+    <style>
+        /* Reset e Font di Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Navbar Superiore Fissa */
+        .top-navbar {
+            position: sticky;
+            top: 0;
+            background-color: #121212;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .navbar-brand {
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .navbar-brand span {
+            color: #8bc34a;
+        }
+
+        /* Contenitore Selettore Lingua */
+        .lang-selector {
+            display: flex;
+            gap: 6px;
+        }
+
+        .lang-btn {
+            background-color: #1a1a1a;
+            color: #aaa;
+            border: 1px solid #333;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background-color: #8bc34a;
+            color: #000;
+            border-color: #8bc34a;
+        }
+
+        /* Pulsante per aprire il menu (Hamburger) */
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 28px;
+            height: 20px;
+        }
+
+        .menu-toggle .bar {
+            width: 100%;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Menu a Tendina Laterale */
+        .menu-nav {
+            position: fixed;
+            top: 53px;
+            right: -100%;
+            width: 250px;
+            height: calc(100vh - 53px);
+            background-color: #121212;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
+            z-index: 999;
+            transition: right 0.3s ease;
+            border-left: 1px solid #222;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        }
+
+        .menu-nav.active {
+            right: 0;
+        }
+
+        .menu-nav a {
+            color: #ccc;
+            text-decoration: none;
+            padding: 12px 15px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .menu-nav a:hover {
+            background-color: #8bc34a;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Animazione pulsante X */
+        .menu-toggle.open .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+        .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* Header e Logo */
+        header {
+            text-align: center;
+            padding: 30px 20px 10px 20px;
+        }
+
+        .logo {
+            max-width: 220px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Contenitore Menu */
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            color: #8bc34a;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #222;
+            padding-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        /* Struttura Piatti */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background-color: #141414;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .menu-item:hover {
+            border-left-color: #8bc34a;
+        }
+
+        .item-details {
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .item-allergens {
+            font-size: 0.75rem;
+            color: #ffa726;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        /* Nascondiamo inizialmente le lingue straniere usando una classe dedicata */
+        .lang-en, .lang-fr, .lang-es {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #555;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superiore con Lingue e Pulsante Menu -->
+    <div class="top-navbar">
+        <div class="navbar-brand">PLAZA <span>PRETORIA</span></div>
+        
+        <!-- Pulsanti Cambio Lingua -->
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="changeLanguage('it', event)">IT</button>
+            <button class="lang-btn" onclick="changeLanguage('en', event)">EN</button>
+            <button class="lang-btn" onclick="changeLanguage('fr', event)">FR</button>
+            <button class="lang-btn" onclick="changeLanguage('es', event)">ES</button>
+        </div>
+
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+
+    <!-- Menu Laterale -->
+    <nav class="menu-nav" id="sidebar-menu">
+        <a href="#antipasti">
+            <span class="lang-it">Antipasti</span><span class="lang-en">Starters</span><span class="lang-fr">Entrées</span><span class="lang-es">Entrantes</span>
+        </a>
+        <a href="#primi">
+            <span class="lang-it">Primi Piatti</span><span class="lang-en">First Courses</span><span class="lang-fr">Plats Principaux</span><span class="lang-es">Primeros Platos</span>
+        </a>
+        <a href="#secondi-pesce">
+            <span class="lang-it">Secondi Pesce</span><span class="lang-en">Fish Courses</span><span class="lang-fr">Plats de Poisson</span><span class="lang-es">Platos de Pescado</span>
+        </a>
+        <a href="#secondi-carne">
+            <span class="lang-it">Secondi Carne</span><span class="lang-en">Meat Courses</span><span class="lang-fr">Plats de Viande</span><span class="lang-es">Platos de Carne</span>
+        </a>
+        <a href="#insalate">
+            <span class="lang-it">Insalate</span><span class="lang-en">Salads</span><span class="lang-fr">Salades</span><span class="lang-es">Ensaladas</span>
+        </a>
+        <a href="#hamburger">
+            <span class="lang-it">Hamburger</span><span class="lang-en">Burgers</span><span class="lang-fr">Hamburgers</span><span class="lang-es">Hamburguesas</span>
+        </a>
+        <a href="#bevande">
+            <span class="lang-it">Bevande e Birre</span><span class="lang-en">Drinks & Beers</span><span class="lang-fr">Boissons & Bières</span><span class="lang-es">Bebidas y Cervezas</span>
+        </a>
+    </nav>
+
+    <header>
+        <img src="logo.jpg" alt="Plaza Pretoria Logo" class="logo">
+    </header>
+
+    <div class="menu-container">
+
+        <!-- ANTIPASTI -->
+        <section id="antipasti">
+            <h2 class="section-title">
+                <span class="lang-it">Antipasti</span><span class="lang-en">Starters</span><span class="lang-fr">Entrées</span><span class="lang-es">Entrantes</span>
+            </h2>
+            
+            <div class="menu-item">
+                <div class="item-details">
+                    <!-- Versione Italiana -->
+                    <div class="lang-it">
+                        <div class="item-title">Caponata di Pesce Spada</div>
+                        <div class="item-description">Melanzane, sedano, olive, capperi, salsa agrodolce e dadini di spada fresco.</div>
+                        <div class="item-allergens">Allergeni: Pesce, Sedano</div>
+                    </div>
+                    <!-- Versione Inglese -->
+                    <div class="lang-en">
+                        <div class="item-title">Swordfish Caponata</div>
+                        <div class="item-description">Eggplants, celery, olives, capers, sweet and sour sauce and fresh swordfish cubes.</div>
+                        <div class="item-allergens">Allergens: Fish, Celery</div>
+                    </div>
+                    <!-- Versione Francese -->
+                    <div class="lang-fr">
+                        <div class="item-title">Caponata d'Espadon</div>
+                        <div class="item-description">Aubergines, céleri, olives, câpres, sauce aigre-douce et dés d'espadon frais.</div>
+                        <div class="item-allergens">Allergènes: Poisson, Céleri</div>
+                    </div>
+                    <!-- Versione Spagnola -->
+                    <div class="lang-es">
+                        <div class="item-title">Caponata de Pez Espada</div>
+                        <div class="item-description">Berenjenas, apio, aceitunas, alcaparras, salsa agridulce y daditos de pez espada fresco.</div>
+                        <div class="item-allergens">Alérgenos: Pescado, Apio</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 12,00</div>
+            </div>
+        </section>
+
+        <!-- PRIMI PIATTI -->
+        <section id="primi">
+            <h2 class="section-title">
+                <span class="lang-it">Primi Piatti</span><span class="lang-en">First Courses</span><span class="lang-fr">Plats Principaux</span><span class="lang-es">Primeros Platos</span>
+            </h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">Busiate con Pesto alla Trapanese</div>
+                        <div class="item-description">Pasta fresca, pomodoro, mandorle, basilico, aglio e gamberi.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Busiate with Trapanese Pesto</div>
+                        <div class="item-description">Fresh pasta, tomato, almonds, basil, garlic and prawns.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">Busiate au Pesto de Trapani</div>
+                        <div class="item-description">Pâtes fraîches, tomate, amande, basilic, ail et crevettes.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">Busiate con Pesto a la Trapanesa</div>
+                        <div class="item-description">Pasta fresca, tomate, almendras, albahaca, ajo y gambas.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 14,00</div>
+            </div>
+        </section>
+
+        <!-- SECONDI DI PESCE -->
+        <section id="secondi-pesce">
+            <h2 class="section-title">
+                <span class="lang-it">Secondi di Pesce</span><span class="lang-en">Fish Courses</span><span class="lang-fr">Plats de Poisson</span><span class="lang-es">Platos de Pescado</span>
+            </h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">Trancio di Tonno in Crosta</div>
+                        <div class="item-description">Tonno fresco locale con granella di pistacchio.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Tuna Steak in Crust</div>
+                        <div class="item-description">Fresh local tuna with chopped pistachios.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">Pavé de Thon en Croûte</div>
+                        <div class="item-description">Thon frais local aux pistaches concassées.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">Filete de Atún en Costra</div>
+                        <div class="item-description">Atún fresco local con pistachos picados.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 18,00</div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Plaza Pretoria. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Gestione Menu Hamburger
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const sidebarMenu = document.getElementById('sidebar-menu');
+        const menuLinks = document.querySelectorAll('#sidebar-menu a');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            sidebarMenu.classList.toggle('active');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                sidebarMenu.classList.remove('active');
+            });
+        });
+
+        // Funzione per Cambiare Lingua Corretta
+        function changeLanguage(lang, event) {
+            // Rimuove la classe attiva da tutti i pulsanti delle lingue
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Aggiunge la classe attiva al pulsante premuto
+            event.target.classList.add('active');
+
+            // Nasconde TUTTI i blocchi delle lingue usando le classi specifiche
+            const tutteLeLingue = ['.lang-it', '.lang-en', '.lang-fr', '.lang-es'];
+            tutteLeLingue.forEach(classe => {
+                document.querySelectorAll(classe).forEach(elem => {
+                    elem.style.display = 'none';
+                });
+            });
+
+            // Mostra solo gli elementi della lingua selezionata
+            document.querySelectorAll(`.lang-${lang}`).forEach(elem => {
+                // Se è uno span (nei bottoni o titoli), usa 'inline', altrimenti 'block' per i piatti
+                if(elem.tagName === 'SPAN') {
+                    elem.style.display = 'inline';
+                } else {
+                    elem.style.display = 'block';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
