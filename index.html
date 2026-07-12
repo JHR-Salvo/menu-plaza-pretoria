@@ -90,22 +90,27 @@
         }
 
         /* Menu a Tendina Laterale */
+        /* Menu a Tendina Laterale */
         .menu-nav {
-            position: fixed;
-            top: 53px;
-            right: -100%;
-            width: 250px;
-            height: calc(100vh - 53px);
-            background-color: #121212;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            gap: 15px;
-            z-index: 999;
-            transition: right 0.3s ease;
-            border-left: 1px solid #222;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-        }
+        position: fixed;
+        top: 53px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 53px);
+        background-color: #121212;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px; /* Ridotto leggermente per far stare più voci */
+        z-index: 999;
+        transition: right 0.3s ease;
+        border-left: 1px solid #222;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    
+    /* QUESTE SONO LE RIGHE CHE TI SERVONO PER LO SCORRIMENTO */
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch; /* Per uno scorrimento fluido su iPhone/Android */
+}
 
         .menu-nav.active {
             right: 0;
