@@ -104,6 +104,8 @@ h2 {
 .item-text {
     flex: 1;
     min-width: 0; /* Impedisce al testo di spingere il prezzo fuori dal box */
+    overflow-wrap: break-word; /* Forza le parole lunghe senza spazi ad andare a capo */
+    word-break: break-word;
 }
 
 /* Blocco del prezzo a destra */
