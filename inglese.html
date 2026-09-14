@@ -90,27 +90,22 @@
         }
 
         /* Menu a Tendina Laterale */
-        /* Menu a Tendina Laterale */
         .menu-nav {
-        position: fixed;
-        top: 53px;
-        right: -100%;
-        width: 250px;
-        height: calc(100vh - 53px);
-        background-color: #121212;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        gap: 10px; /* Ridotto leggermente per far stare più voci */
-        z-index: 999;
-        transition: right 0.3s ease;
-        border-left: 1px solid #222;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    
-    /* QUESTE SONO LE RIGHE CHE TI SERVONO PER LO SCORRIMENTO */
-    overflow-y: auto; 
-    -webkit-overflow-scrolling: touch; /* Per uno scorrimento fluido su iPhone/Android */
-}
+            position: fixed;
+            top: 53px;
+            right: -100%;
+            width: 250px;
+            height: calc(100vh - 53px);
+            background-color: #121212;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 15px;
+            z-index: 999;
+            transition: right 0.3s ease;
+            border-left: 1px solid #222;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        }
 
         .menu-nav.active {
             right: 0;
@@ -318,102 +313,113 @@
             <!-- Piatto 1 -->
             <div class="menu-item">
                 <div class="item-details">
-                    
-                    <div class="lang-en">
-                        <div class="item-title">Potato and scamorza arancini flavored with orange (2 pieces)</div>
-                        <div class="item-description">potatoes, scamorza cheese, eggs, orange, cheese, breadcrumbs, salt, pepper.</div>
-                </div>
+                    <div class="lang-it">
+                        <div class="item-title">caponata palermitana.</div>
+                        <div class="item-description">melanzane,sedano,olive verdi,capperi,cipolla in agrodolce.</div>
                     </div>
-                <div class="item-price">€ 10,00</div>
+                    <div class="lang-en">
+                        <div class="item-title">Palermitan Caponata</div>
+                        <div class="item-description">Eggplant, celery, green olives, capers, sweet-and-sour onions</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">Caponata à la palermitaine</div>
+                        <div class="item-description">Aubergines, céleri, olives vertes, câpres, oignon aigre-doux</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">caponata al estilo de Palermo</div>
+                        <div class="item-description">berenjenas, apio, aceitunas verdes, alcaparras, cebolla agridulce</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 8,00</div>
             </div>
 
             <!-- Piatto 2 -->
             <div class="menu-item">
                 <div class="item-details">
                     <div class="lang-it">
-                        <div class="item-title">Crocchette di verdure e menta.</div>
-                        <div class="item-description">zucchinette, melanzane, uova, menta, sale, pepe.</div>
+                        <div class="item-title">panelle e crocche.</div>
+                        <div class="item-description">farina di ceci,patate,prezzemolo,limone.</div>
                     </div>
                     <div class="lang-en">
-                        <div class="item-title">Vegetable and mint croquettes</div>
-                        <div class="item-description">zucchini, aubergines, eggs, mint, salt, pepper.</div>
+                        <div class="item-title">panelle and croquettes</div>
+                        <div class="item-description">Chickpea flour, potatoes, parsley, lemon.</div>
                     </div>
                     <div class="lang-fr">
-                        <div class="item-title">Croquettes de légumes et de menthe</div>
-                        <div class="item-description">courgettes, aubergines, œufs, menthe, sel, poivre.</div>
+                        <div class="item-title">panelle et crocche</div>
+                        <div class="item-description">farine de pois chiches, pommes de terre, persil, citron.</div>
                     </div>
                     <div class="lang-es">
-                        <div class="item-title">Croquetas de verduras y menta</div>
-                        <div class="item-description">calabacines, berenjenas, huevos, menta, sal, pimienta.</div>
+                        <div class="item-title">panelle y crocche</div>
+                        <div class="item-description">harina de garbanzos, patatas, perejil, limón.</div>
                     </div>
                 </div>
-                <div class="item-price">€ 10,00</div>
+                <div class="item-price">€ 8,00</div>
             </div>
 
             <!-- Piatto 3 -->
             <div class="menu-item">
                 <div class="item-details">
                     <div class="lang-it">
-                        <div class="item-title">Tortino di melanzane e pomodoro, mozzarella profumata al basilico.</div>
-                        <div class="item-description">pomodoro, melanzana, mozzarella, basilico, parmigiano.</div>
+                        <div class="item-title">cozze scoppiate/zuppa.</div>
+                        <div class="item-description">cozze fresche,aglio,prezzemolo,peperoncino,pomodoro.</div>
                     </div>
                     <div class="lang-en">
-                        <div class="item-title">Eggplant and tomato tart, mozzarella flavored with basil</div>
-                        <div class="item-description">tomato, aubergines, mozzarella, basil, parmesan.</div>
+                        <div class="item-title">Sautéed Mussels / Mussel Soup</div>
+                        <div class="item-description">Fresh mussels, garlic, parsley, chili pepper, cherry tomatoes.</div>
                     </div>
                     <div class="lang-fr">
-                        <div class="item-title">Tarte aux aubergines et aux tonnes, mozzarella aromatisée au basilic</div>
-                        <div class="item-description">tomate, aubergine, mozzarella, basilic, parmesan.</div>
+                        <div class="item-title">moules soufflées/soupe</div>
+                        <div class="item-description">moules fraîches, ail, persil, piment, tomate.</div>
                     </div>
                     <div class="lang-es">
-                        <div class="item-title">Tarta de berenjena y tomate, mozzarella aromatizada con albahaca</div>
-                        <div class="item-description">tomate, berenjena, mozzarella, albahaca, parmesano.</div>
+                        <div class="item-title">mejillones reventados/sopa</div>
+                        <div class="item-description">mejillones frescos, ajo, perejil, chile, tomate.</div>
                     </div>
                 </div>
-                <div class="item-price">€ 11,00</div>
+                <div class="item-price">€ 12,00</div>
             </div>
 
             <!-- Piatto 4 -->
             <div class="menu-item">
                 <div class="item-details">
                     <div class="lang-it">
-                        <div class="item-title">Zuppa di cozze al picchio pacchio con crostini di pane.</div>
-                        <div class="item-description">cozze, pomodoro pelato, aglio, prezzemolo, peperoncino.</div>
+                        <div class="item-title">cocktail di gamberi.</div>
+                        <div class="item-description">gamberi argentini,iceberg,salsa rosa,limone.</div>
                     </div>
                     <div class="lang-en">
-                        <div class="item-title">Piccio Pacchio mussel soup with bread croutons</div>
-                        <div class="item-description">mussels, peeled tomatoes, garlic, parsley, chili pepper.</div>
+                        <div class="item-title">Shrimp Cocktail</div>
+                        <div class="item-description">Argentine prawns, iceberg lettuce, Marie Rose sauce, lemon.</div>
                     </div>
                     <div class="lang-fr">
-                        <div class="item-title">Soupe de moules Piccio Pacchio avec croûtons de pain</div>
-                        <div class="item-description">moules, tomates pelées, ail, persil, piment.</div>
+                        <div class="item-title">cocktail de crevettes</div>
+                        <div class="item-description">Crevettes argentines, laitue iceberg, sauce Marie Rose, citron.</div>
                     </div>
                     <div class="lang-es">
-                        <div class="item-title">Piccio Pacchio, sopa de mejillones con picatostes de pan</div>
-                        <div class="item-description">mejillones, tomates pelados, ajo, perejil, chile.</div>
+                        <div class="item-title">cóctel de langostinos</div>
+                        <div class="item-description">Langostinos argentinos, lechuga iceberg, salsa Marie Rose, limón.</div>
                     </div>
                 </div>
-                <div class="item-price">€ 13,00</div>
+                <div class="item-price">€ 14,00</div>
             </div>
 
             <!-- Piatto 5 -->
             <div class="menu-item">
                 <div class="item-details">
                     <div class="lang-it">
-                        <div class="item-title">Polpette di gamberi agli agrumi siciliani con cipolla rossa di tropea (5 pezzi).</div>
-                        <div class="item-description">gambero, pane raffermo, latte menta, limone, sale, pepe.</div>
+                        <div class="item-title">tartare di manzo con tuorlo e fonduta.</div>
+                        <div class="item-description">scottona di manzo,tuorlo,fonduta di pecorino,pane croccante</div>
                     </div>
                     <div class="lang-en">
-                        <div class="item-title">Sicilian citrus shrimp meatballs with Tropea red onion (5 pieces)</div>
-                        <div class="item-description">shrimp, stale bread, milk, mint, lemon, salt, pepper.</div>
+                        <div class="item-title">Beef Tartare with Egg Yolk & Fondue</div>
+                        <div class="item-description">Scottona beef, egg yolk, pecorino cheese fondue, crispy bread.</div>
                     </div>
                     <div class="lang-fr">
-                        <div class="item-title">Boulettes de crevettes aux agrumes de Sicile et oignons rouges de Tropea (5 pièces)</div>
-                        <div class="item-description">crevettes, pain rassis, lait, menthe, citron, sel, poivre.</div>
+                        <div class="item-title">Tartare de bœuf avec jaune d'œuf et fondue</div>
+                        <div class="item-description">Bœuf, jaune d'œuf, fondue de pecorino, pain croustillant.</div>
                     </div>
                     <div class="lang-es">
-                        <div class="item-title">Albóndigas de gambas sicilianas con cítricos y cebolla roja de Tropea (5 piezas)</div>
-                        <div class="item-description">camarones, pan duro, leche, menta, limón, sal, pimienta.</div>
+                        <div class="item-title">Tartar de ternera con yema de huevo y fondue.</div>
+                        <div class="item-description">Fondue de carne de res, yema de huevo, queso pecorino y pan crujiente..</div>
                     </div>
                 </div>
                 <div class="item-price">€ 15,00</div>
@@ -423,74 +429,227 @@
             <div class="menu-item">
                 <div class="item-details">
                     <div class="lang-it">
-                        <div class="item-title">Polpo arrosto profumato al lime.</div>
-                        <div class="item-description">polpo, pane, sale, pepe, limone, rosmarino, origano.</div>
+                        <div class="item-title">insalata di mare.</div>
+                        <div class="item-description">polpo,gamberi,cozze,vongole,sedano,verdure sott'aceto.</div>
                     </div>
                     <div class="lang-en">
-                        <div class="item-title">Roasted octopus flavored with lime</div>
-                        <div class="item-description">octopus, bread, salt, pepper, lemon, rosemary, oregano.</div>
+                        <div class="item-title">Seafood Salad</div>
+                        <div class="item-description">Octopus, prawns, mussels, clams, celery, pickled vegetables.</div>
                     </div>
                     <div class="lang-fr">
-                        <div class="item-title">Poulpe rôti aromatisé au citron vert</div>
-                        <div class="item-description">poulpe, pain, sel, poivre, citron, romarin, origan.</div>
+                        <div class="item-title">salade de fruits de mer</div>
+                        <div class="item-description">poulpe, crevettes, moules, palourdes, céleri, légumes marinés.</div>
                     </div>
                     <div class="lang-es">
-                        <div class="item-title">Pulpo asado con sabor a lima</div>
-                        <div class="item-description">pulpo, pan, sal, pimienta, limón, romero, orégano.</div>
+                        <div class="item-title">ensalada de mariscos</div>
+                        <div class="item-description">pulpo, Langostinos, mejillones, almejas, apio, verduras encurtidas.</div>
                     </div>
                 </div>
-                <div class="item-price">€ 16,00</div>
+                <div class="item-price">€ 14,00</div>
             </div>
-
-            <!-- Piatto 7 -->
-            <div class="menu-item">
-                <div class="item-details">
-                    <div class="lang-it">
-                        <div class="item-title">Cupoletta di salmone affumicato e bufala con verdure croccanti.</div>
-                        <div class="item-description">salmone, bufala, zucchine, melanzane, carote, sale, pepe.</div>
-                    </div>
-                    <div class="lang-en">
-                        <div class="item-title">Smoked salmon and buffalo mozzarella dome with crunchy vegetables</div>
-                        <div class="item-description">salmon, buffalo mozzarella, zucchini, aubergines, carrots, salt, pepper.</div>
-                    </div>
-                    <div class="lang-fr">
-                        <div class="item-title">Dôme de saumon fumé et de mozzarella de bufflonne avec des légumes croquants</div>
-                        <div class="item-description">saumon, mozzarella de bufflonne, courgettes, aubergines, carottes, sel, poivre.</div>
-                    </div>
-                    <div class="lang-es">
-                        <div class="item-title">Cúpula de salmón ahumado y mozzarella de búfala con verduras crujientes</div>
-                        <div class="item-description">salmón, mozzarella de búfala, calabacines, berenjenas, zanahorias, sal, pimienta.</div>
-                    </div>
-                </div>
-                <div class="item-price">€ 18,00</div>
-            </div>
-        </section>
 
         <!-- PRIMI PIATTI -->
         <section id="primi">
             <h2 class="section-title">
                 <span class="lang-it">Primi Piatti</span><span class="lang-en">First Courses</span><span class="lang-fr">Plats Principaux</span><span class="lang-es">Primeros Platos</span>
             </h2>
+            <!-- Piatto 1 -->
             <div class="menu-item">
                 <div class="item-details">
                     <div class="lang-it">
-                        <div class="item-title">Gnocchi fatti in casa alla genovese</div>
-                        <div class="item-description">gnocchi di patate, pesto genovese, datterini.</div>
+                        <div class="item-title">pasta con le sarde</div>
+                        <div class="item-description">bucatini,sarde fresche,finocchietto,uvetta,pinoli,molica tostata.</div>
                     </div>
                     <div class="lang-en">
-                        <div class="item-title">Homemade Genovese gnocchi</div>
-                        <div class="item-description">potato gnocchi, Genovese pesto, cherry tomatoes.</div>
+                        <div class="item-title">Pasta with Sardines</div>
+                        <div class="item-description">Bucatini, fresh sardines, wild fennel, raisins, pine nuts, toasted breadcrumbs.</div>
                     </div>
                     <div class="lang-fr">
-                        <div class="item-title">Gnocchis génois faits maison</div>
-                        <div class="item-description">gnocchis de pommes de terre, pesto génois, tonnes cerises.</div>
+                        <div class="item-title">pâtes aux sardines</div>
+                        <div class="item-description">bucatini, sardines fraîches, fenouil, raisins secs, pignons de pin, chapelure grillée</div>
                     </div>
                     <div class="lang-es">
-                        <div class="item-title">Ñoquis genoveses caseros</div>
-                        <div class="item-description">ñoquis de patata, pesto genovés, tomates cherry.</div>
+                        <div class="item-title">pasta con sardinas</div>
+                        <div class="item-description">bucatini, sardinas frescas, hinojo, pasas, piñones, pan rallado tostado.</div>
                     </div>
                 </div>
                 <div class="item-price">€ 14,00</div>
+            </div>
+            <!-- Piatto 2 -->
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">spaghetti cozze e vongole</div>
+                        <div class="item-description">busiate,melanzane fritte,pomodoro,prezzemolo.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Busiate alla Norma</div>
+                        <div class="item-description">Busiate pasta, fried eggplant, tomato, salted ricotta, basil.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">Busiate alla Norma</div>
+                        <div class="item-description">busiate, aubergines frites, tomate, persil.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">Busiate alla Norma</div>
+                        <div class="item-description">busiate, berenjenas fritas, tomate, perejil.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 17,00</div>
+            </div>
+            <!-- Piatto 3 -->
+        <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">Busiate alla Norma</div>
+                        <div class="item-description">busiate,melanzane fritte,pomodoro,prezzemolo.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Busiate alla Norma</div>
+                        <div class="item-description">Busiate pasta, fried eggplant, tomato, salted ricotta, basil.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">Busiate alla Norma</div>
+                        <div class="item-description">busiate, aubergines frites, tomate, persil.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">Busiate alla Norma</div>
+                        <div class="item-description">busiate, berenjenas fritas, tomate, perejil.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 14,00</div>
+            </div>
+            <!-- Piatto 4 -->
+        <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">risotto al nero di seppia</div>
+                        <div class="item-description">riso carnaroli,nero di seppia,seppia,prezzemolo.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Squid Ink Risotto</div>
+                        <div class="item-description">Carnaroli rice, squid ink, squid, parsley.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">risotto à l'encre de seiche</div>
+                        <div class="item-description">Riz Carnaroli, encre de seiche, seiche, persil.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">risotto de tinta de sepia</div>
+                        <div class="item-description">Arroz carnaroli, tinta de calamar, sepia, perejil.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 18,00</div>
+            </div>
+            <!-- Piatto 5 -->
+        <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">Spaghetti allo Scoglio</div>
+                        <div class="item-description">spaghetti,cozze,vongole,gamberi,pomodorino,aglio.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Spaghetti with Seafood</div>
+                        <div class="item-description">Spaghetti, mussels, clams, prawns, cherry tomatoes, garlic.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">Spaghettis aux fruits de mer</div>
+                        <div class="item-description">spaghetti, moules, palourdes, crevettes, tomates cerises, ail.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">Espaguetis con mariscos</div>
+                        <div class="item-description">espaguetis, mejillones, almejas, camarones, tomates cherry, ajo.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 18,00</div>
+            </div>
+            <!-- Piatto 6 -->
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">rigatoni al ragu</div>
+                        <div class="item-description">rigatoni,ragù di carne mista,parmigiano.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Rigatoni with Meat Ragù </div>
+                        <div class="item-description">Rigatoni, mixed-meat ragù, Parmesan cheese.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">rigatoni au Ragù</div>
+                        <div class="item-description">rigatoni, ragù de viande mélangée, parmesan.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">rigatoni con ragú</div>
+                        <div class="item-description">rigatoni, ragú de carne mixta, queso parmesano.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 14,00</div>
+            </div>
+            <!-- Piatto 7 -->
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">Carbonara </div>
+                        <div class="item-description">rigatoni,guanciale,tuorlo,pecorino Romano,pepe nero.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Carbonara  </div>
+                        <div class="item-description">Rigatoni, guanciale, egg yolk, Pecorino Romano, black pepper.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">Carbonara </div>
+                        <div class="item-description">rigatoni, bacon, jaune d'oeuf, pecorino romano, poivre noir.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">Carbonara </div>
+                        <div class="item-description">rigatoni, tocino, yema de huevo, pecorino romano, pimienta negra.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 13,00</div>
+            </div>
+            <!-- Piatto 8 -->
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">Gnocchi Cacio e Pepe </div>
+                        <div class="item-description">Gnocchi,pecorino romano DOP,pepe nero.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">Gnocchi Cacio e Pepe  </div>
+                        <div class="item-description">Gnocchi, DOP Pecorino Romano, black pepper.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">Gnocchi Cacio e Pepe </div>
+                        <div class="item-description">rigatoni, bacon, jaune d'oeuf, pecorino romano, poivre noir.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">Gnocchi Cacio e Pepe </div>
+                        <div class="item-description">rigatoni, tocino, yema de huevo, pecorino romano, pimienta negra.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 13,00</div>
+            </div>
+            <!-- Piatto 9 -->
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="lang-it">
+                        <div class="item-title">spaghetti alla scapece </div>
+                        <div class="item-description">Spaghetti, zucchine, menta.</div>
+                    </div>
+                    <div class="lang-en">
+                        <div class="item-title">spaghetti alla scapece  </div>
+                        <div class="item-description">Spaghetti, zucchini, mint.</div>
+                    </div>
+                    <div class="lang-fr">
+                        <div class="item-title">spaghetti alla scapece </div>
+                        <div class="item-description">Spaghetti, courgettes, menthe.</div>
+                    </div>
+                    <div class="lang-es">
+                        <div class="item-title">espaguetis alla scapece </div>
+                        <div class="item-description">Espaguetis, calabacines, menta.</div>
+                    </div>
+                </div>
+                <div class="item-price">€ 12,00</div>
             </div>
         </section>
 
