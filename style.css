@@ -1,0 +1,160 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #0f141d;
+    color: #e2e8f0;
+    line-height: 1.5;
+    padding: 20px 15px;
+}
+
+/* ==========================================
+   HEADER & LOGO
+   ========================================== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 20px;
+}
+
+header img {
+    max-width: 180px;
+    height: auto;
+}
+
+.brand-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #d4af37;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   NAVIGAZIONE CATEGORIE
+   ========================================== */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+nav a {
+    background: #1a202c;
+    color: #d4af37;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #2d3748;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    background: #d4af37;
+    color: #0f141d;
+}
+
+/* ==========================================
+   SEZIONI E TITOLI
+   ========================================== */
+section {
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    border-left: 4px solid #d4af37;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   SCHEDA PIATTO (RISOLUZIONE ALLINEAMENTO PREZZI)
+   ========================================== */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1a202c;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 15px;
+    gap: 15px; /* Spazio garantito tra descrizione e prezzo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Blocco del testo a sinistra */
+.item-text {
+    flex: 1;
+    min-width: 0; /* Impedisce al testo di spingere il prezzo fuori dal box */
+}
+
+/* Blocco del prezzo a destra */
+.item-price {
+    flex-shrink: 0; /* Impedisce al prezzo di rimpicciolirsi o andare a capo */
+    white-space: nowrap;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #d4af37;
+    background-color: rgba(212, 175, 55, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* ==========================================
+   TESTI E TRADUZIONI MULTILINGUA
+   ========================================== */
+.dish-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+.dish-ingredients {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-bottom: 6px;
+}
+
+/* Stile per le traduzioni secondarie (Inglese, Francese, Spagnolo) */
+.item-text > div:nth-child(n+2) .dish-title {
+    font-size: 0.95rem;
+    color: #cbd5e0;
+    font-weight: 600;
+}
+
+.item-text > div:nth-child(n+2) .dish-ingredients {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #718096;
+    border-top: 1px solid #2d3748;
+    margin-top: 40px;
+}
