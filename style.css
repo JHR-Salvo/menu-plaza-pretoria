@@ -13,6 +13,7 @@ body {
     color: #e2e8f0;
     line-height: 1.5;
     padding: 20px 15px;
+    overflow-x: hidden; /* Evita lo scorrimento orizzontale dell'intera pagina */
 }
 
 /* ==========================================
@@ -39,17 +40,28 @@ header img {
 }
 
 /* ==========================================
-   NAVIGAZIONE CATEGORIE
+   GESTIONE TENDINA / DRAWER MENU (MODIFICATO)
    ========================================== */
+/* Layout e contenimento del pannello a tendina */
+.dropdown-menu, 
+.dropdown-content,
 nav {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permette ai pulsanti di andare a capo quando lo spazio finisce */
     gap: 10px;
     justify-content: center;
     margin-bottom: 30px;
+    padding: 10px;
+    overflow-x: hidden; /* Impedisce ai pulsanti di uscire dallo schermo a destra */
 }
 
-nav a {
+/* Stile dei pulsanti all'interno della tendina */
+nav a,
+.dropdown-content a,
+.dropdown-content button {
     background: #1a202c;
     color: #d4af37;
     padding: 8px 16px;
@@ -59,9 +71,17 @@ nav a {
     font-weight: 600;
     border: 1px solid #2d3748;
     transition: all 0.2s ease;
+    
+    /* Regola la larghezza massima per evitare sbavature su schermi stretti */
+    max-width: 100%;
+    text-align: center;
+    white-space: normal; /* Permette al testo del pulsante di andare a capo se molto lungo */
+    word-break: break-word;
 }
 
-nav a:hover {
+nav a:hover,
+.dropdown-content a:hover,
+.dropdown-content button:hover {
     background: #d4af37;
     color: #0f141d;
 }
@@ -104,8 +124,6 @@ h2 {
 .item-text {
     flex: 1;
     min-width: 0; /* Impedisce al testo di spingere il prezzo fuori dal box */
-    overflow-wrap: break-word; /* Forza le parole lunghe senza spazi ad andare a capo */
-    word-break: break-word;
 }
 
 /* Blocco del prezzo a destra */
